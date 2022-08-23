@@ -189,16 +189,18 @@
             ] 
         ],
     ];
+
+
     ?>
 
     <?php
         for ($i = 0; $i < count($alunni); $i++) {
 
-            $media = $alunni[$i]['voti']['matematica'] + $alunni[$i]['voti']['storia'] + $alunni[$i]['voti']['italiano'];
+            $media = array_sum($alunni[$i]['voti']);
     ?>
     <h3>
         <?php
-          echo $alunni[$i]["name"] .' '. $alunni[$i]["cognome"] . ' ' . intval($media / 3); 
+          echo $alunni[$i]["name"] .' '. $alunni[$i]["cognome"] . ' ' .  intval($media / 3); 
         ?>
     </h3>
     <?php
